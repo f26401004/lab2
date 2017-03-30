@@ -25,8 +25,8 @@ int Elo::calculate_new_r_value(double s)
 {
 	ea = 1 / (1 + pow(10, (double)((rb - ra) / 400)));
 	eb = 1 / (1 + pow(10, (double)((ra - rb) / 400)));
-	ra = ra + k * (s - ea);
-	rb = rb + k * ((1-s) - eb);
+	ra = round(ra + k * (s - ea));
+	rb = round(rb + k * ((1-s) - eb));
 }
 // get the value of Ra.
 double Elo::get_Ra()
